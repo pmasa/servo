@@ -22,7 +22,7 @@ print ("Waiting for 2 seconds")
 time.sleep(2)
 
 
-print ("Rotation 180 degrees in 10 steps")
+print ("Start processing...")
 
 #Depend on the servo. Calibration is needed to be sure
 MIN_DUTY = 2
@@ -51,7 +51,7 @@ try:
                 servo2.ChangeDutyCycle(MAX_DUTY)
                 time.sleep(0.5)
 
-                print("Turning back to 0 degrees")
+                print("Back to initial degrees")
                 servo1.ChangeDutyCycle(MAX_DUTY)
                 servo2.ChangeDutyCycle(MIN_DUTY)
                 time.sleep(0.5)
@@ -59,12 +59,14 @@ try:
                 no_stress()
                 time.sleep(1)
             
-            #rubbing hands
+	    print("Rubbing hands ...")
             time.sleep(1)
-            #pump running
+
+	    print("Open pump")
             GPIO.output(relay_pin, GPIO.HIGH)
             time.sleep(5)
-            #pump stopped
+
+	    print("Pump stopped")
             GPIO.output(relay_pin, GPIO.LOW)
         elif i==0:
             no_stress()
