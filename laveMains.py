@@ -3,7 +3,6 @@ import time
 
 import threading 
 
-
 GPIO.setmode(GPIO.BCM)
 
 relay_pin = 27
